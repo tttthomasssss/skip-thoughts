@@ -15,13 +15,15 @@ from collections import OrderedDict, defaultdict
 from scipy.linalg import norm
 from nltk.tokenize import word_tokenize
 
+from apt_toolkit.utils.base import path_utils
+
 profile = False
 
 #-----------------------------------------------------------------------------#
 # Specify model and table locations here
 #-----------------------------------------------------------------------------#
-path_to_models = '/u/rkiros/public_html/models/'
-path_to_tables = '/u/rkiros/public_html/models/'
+path_to_models = os.path.join(path_utils.get_dataset_path(), 'skipthoughts')
+path_to_tables = os.path.join(path_utils.get_dataset_path(), 'skipthoughts')
 #-----------------------------------------------------------------------------#
 
 path_to_umodel = path_to_models + 'uni_skip.npz'
