@@ -1,0 +1,5 @@
+theano>=0.8.2
+numpy>=1.10.1
+scipy>=0.16.1
+scikit-learn>=0.17
+nltk>=3.2.1
