@@ -8,6 +8,7 @@ import theano.tensor as tensor
 
 import pickle as pkl
 import numpy
+import math
 import copy
 import nltk
 
@@ -113,7 +114,7 @@ def encode(model, X, use_norm=True, verbose=True, batch_size=128, use_eos=False)
     for k in list(ds.keys()):
         if verbose:
             print(k)
-        numbatches = len(ds[k]) / batch_size + 1
+        numbatches = math.ceil(len(ds[k]) / batch_size)
         for minibatch in range(numbatches):
             caps = ds[k][minibatch::numbatches]
 
