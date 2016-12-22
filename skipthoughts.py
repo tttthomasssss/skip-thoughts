@@ -26,8 +26,8 @@ path_to_models = os.path.join(path_utils.get_dataset_path(), 'skipthoughts')
 path_to_tables = os.path.join(path_utils.get_dataset_path(), 'skipthoughts')
 #-----------------------------------------------------------------------------#
 
-path_to_umodel = path_to_models + 'uni_skip.npz'
-path_to_bmodel = path_to_models + 'bi_skip.npz'
+path_to_umodel = os.path.join(path_to_models, 'uni_skip.npz')
+path_to_bmodel = os.path.join(path_to_models, 'bi_skip.npz')
 
 
 def load_model():
@@ -423,5 +423,8 @@ def gru_layer(tparams, state_below, options, prefix='gru', mask=None, **kwargs):
                                 strict=True)
     rval = [rval]
     return rval
+
+if (__name__ == '__main__'):
+    model = load_model()
 
 
